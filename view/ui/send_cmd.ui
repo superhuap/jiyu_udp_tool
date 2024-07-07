@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form_send_cmd</class>
+ <widget class="QWidget" name="Form_send_cmd">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>597</width>
+    <height>481</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="BodyLabel" name="BodyLabel_ip">
+   <property name="geometry">
+    <rect>
+     <x>25</x>
+     <y>79</y>
+     <width>65</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>IP：</string>
+   </property>
+  </widget>
+  <widget class="BodyLabel" name="BodyLabel_port">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>70</y>
+     <width>65</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>端口：</string>
+   </property>
+  </widget>
+  <widget class="LineEdit" name="LineEdit_port">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>60</y>
+     <width>151</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="inputMask">
+    <string/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="BodyLabel" name="bodyLabel_cmd">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>120</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>想发送的命令:</string>
+   </property>
+  </widget>
+  <widget class="LineEdit" name="LineEdit_cmd">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>150</y>
+     <width>191</width>
+     <height>33</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="PrimaryPushButton" name="Button_Send">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>200</y>
+     <width>153</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>发送</string>
+   </property>
+  </widget>
+  <widget class="ListWidget" name="ListWidget">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>50</y>
+     <width>171</width>
+     <height>401</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="ProgressBar" name="ProgressBar">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>260</y>
+     <width>231</width>
+     <height>4</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>15</number>
+   </property>
+   <property name="value">
+    <number>15</number>
+   </property>
+  </widget>
+  <widget class="ProgressRing" name="ProgressRing">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>320</y>
+     <width>100</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="textVisible">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="PrimaryPushButton" name="Button_Shutdown">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>310</y>
+     <width>153</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>关机</string>
+   </property>
+  </widget>
+  <widget class="PrimaryPushButton" name="Button_Reboot">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>360</y>
+     <width>153</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>重启</string>
+   </property>
+  </widget>
+  <widget class="PrimaryPushButton" name="Button_OpenSMB">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>410</y>
+     <width>153</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>打开共享文件夹</string>
+   </property>
+  </widget>
+  <widget class="PillPushButton" name="PillPushButton_selectAll">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>10</y>
+     <width>121</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>全选</string>
+   </property>
+  </widget>
+  <widget class="PrimaryPushButton" name="PrimaryPushButton_load_ip">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>71</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>加载ip</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PushButton</class>
+   <extends>QPushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>PrimaryPushButton</class>
+   <extends>PushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>PillPushButton</class>
+   <extends>ToggleButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>ToggleButton</class>
+   <extends>PushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>BodyLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>ProgressBar</class>
+   <extends>QProgressBar</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>ProgressRing</class>
+   <extends>ProgressBar</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>LineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>ListWidget</class>
+   <extends>QListWidget</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

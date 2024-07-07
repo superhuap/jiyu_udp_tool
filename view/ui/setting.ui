@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+    <class>Form_Setting</class>
+    <widget class="QWidget" name="Form_Setting">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>600</width>
+                <height>500</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>Form</string>
+        </property>
+        <widget class="PrimaryPushButton" name="Button_get_path">
+            <property name="geometry">
+                <rect>
+                    <x>380</x>
+                    <y>30</y>
+                    <width>153</width>
+                    <height>32</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>查找</string>
+            </property>
+        </widget>
+        <widget class="LineEdit" name="LineEdit_path">
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>30</y>
+                    <width>351</width>
+                    <height>33</height>
+                </rect>
+            </property>
+            <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="echoMode">
+                <enum>QLineEdit::Normal</enum>
+            </property>
+        </widget>
+        <widget class="BodyLabel" name="BodyLabel">
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>10</y>
+                    <width>91</width>
+                    <height>19</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>IP列表路径</string>
+            </property>
+        </widget>
+        <widget class="BodyLabel" name="BodyLabel_2">
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>80</y>
+                    <width>63</width>
+                    <height>19</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>延时时间</string>
+            </property>
+        </widget>
+        <widget class="SpinBox" name="SpinBox_time">
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>110</y>
+                    <width>511</width>
+                    <height>33</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="PrimaryPushButton" name="Button_submit">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>380</y>
+                    <width>521</width>
+                    <height>32</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>提交</string>
+            </property>
+        </widget>
+        <widget class="BodyLabel" name="BodyLabel_3">
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>160</y>
+                    <width>91</width>
+                    <height>19</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>命令运行方式</string>
+            </property>
+        </widget>
+        <widget class="ComboBox" name="ComboBox_run_type">
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>190</y>
+                    <width>511</width>
+                    <height>32</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="PrimaryPushButton" name="Button_setTheme">
+            <property name="geometry">
+                <rect>
+                    <x>380</x>
+                    <y>250</y>
+                    <width>153</width>
+                    <height>32</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>修改主题样式</string>
+            </property>
+        </widget>
+        <widget class="PrimaryPushButton" name="Button_setThemeColor">
+            <property name="geometry">
+                <rect>
+                    <x>380</x>
+                    <y>300</y>
+                    <width>153</width>
+                    <height>32</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>修改主题颜色</string>
+            </property>
+        </widget>
+    </widget>
+    <customwidgets>
+        <customwidget>
+            <class>ComboBox</class>
+            <extends>QPushButton</extends>
+            <header>qfluentwidgets</header>
+        </customwidget>
+        <customwidget>
+            <class>PushButton</class>
+            <extends>QPushButton</extends>
+            <header>qfluentwidgets</header>
+        </customwidget>
+        <customwidget>
+            <class>PrimaryPushButton</class>
+            <extends>PushButton</extends>
+            <header>qfluentwidgets</header>
+        </customwidget>
+        <customwidget>
+            <class>BodyLabel</class>
+            <extends>QLabel</extends>
+            <header>qfluentwidgets</header>
+        </customwidget>
+        <customwidget>
+            <class>LineEdit</class>
+            <extends>QLineEdit</extends>
+            <header>qfluentwidgets</header>
+        </customwidget>
+        <customwidget>
+            <class>SpinBox</class>
+            <extends>QSpinBox</extends>
+            <header>qfluentwidgets</header>
+        </customwidget>
+    </customwidgets>
+    <resources/>
+    <connections/>
+</ui>
