@@ -7,6 +7,7 @@ from qfluentwidgets import CheckBox
 from view.ui.send_cmd_ui import Ui_Form_send_cmd
 from utils.tool_api import send
 from utils.utils import utils
+from utils.param_check import check_ip
 
 
 class send_cmd(QWidget, Ui_Form_send_cmd, utils):
@@ -85,10 +86,16 @@ class send_cmd(QWidget, Ui_Form_send_cmd, utils):
                 msg_type = "powershell"
         self.ProgressRing.setMaximum(len(chooses))
         self.ProgressBar.setMaximum(int(self.settings.value("CONFIG/time")))
+
+        try:
+            if int(self.LineEdit_port.text()) > 65535:
+                self.infoBar("error", "端口错误")
+                return
+        except ValueError:
+            self.infoBar("error", "端口错误")
+            return
+
         for i, choose in enumerate(chooses):
-            if choose == "":
-                self.infoBar("error", "ip不合法。")
-                continue
             if smb:
                 if self.settings.value("CONFIG/run_type") == "powershell.exe":
                     send(msg_type,
@@ -141,11 +148,19 @@ class send_cmd(QWidget, Ui_Form_send_cmd, utils):
         else:
             try:
                 with open(self.settings.value("CONFIG/ip_list"), "r", encoding="utf-8") as file:
+                    num = 0
                     for data in file.read().split("\n"):
                         box = CheckBox(data)
                         item = QListWidgetItem()
-                        self.ListWidget.addItem(item)
-                        self.ListWidget.setItemWidget(item, box)
+                        if num == 5:
+                            break
+                        if check_ip(data):
+                            self.ListWidget.addItem(item)
+                            self.ListWidget.setItemWidget(item, box)
+                        else:
+                            self.infoBar("error", f"{data}不合法")
+                            num += 1
+
 
             except TypeError as error:
                 self.infoBar("warning", "未找到ip列表，请去设置。")

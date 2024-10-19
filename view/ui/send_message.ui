@@ -48,11 +48,17 @@
      <height>33</height>
     </rect>
    </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhPreferNumbers</set>
+   </property>
    <property name="inputMask">
     <string/>
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="maxLength">
+    <number>32367</number>
    </property>
   </widget>
   <widget class="BodyLabel" name="bodyLabel_message">
@@ -76,6 +82,9 @@
      <width>191</width>
      <height>33</height>
     </rect>
+   </property>
+   <property name="maxLength">
+    <number>300</number>
    </property>
   </widget>
   <widget class="PrimaryPushButton" name="Button_Send">
@@ -211,11 +220,6 @@
    <header>qfluentwidgets</header>
   </customwidget>
   <customwidget>
-   <class>PillPushButton</class>
-   <extends>ToggleButton</extends>
-   <header>qfluentwidgets</header>
-  </customwidget>
-  <customwidget>
    <class>ToggleButton</class>
    <extends>PushButton</extends>
    <header>qfluentwidgets</header>
@@ -248,6 +252,11 @@
   <customwidget>
    <class>ListWidget</class>
    <extends>QListWidget</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>PillPushButton</class>
+   <extends>ToggleButton</extends>
    <header>qfluentwidgets</header>
   </customwidget>
  </customwidgets>

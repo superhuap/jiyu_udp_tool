@@ -37,7 +37,7 @@ class setting(QWidget, Ui_Form_Setting, utils):
 
     # 设置ip_list文件路径
     def set_path(self):
-        file_path = QFileDialog.getOpenFileName(self, "选取文件")
+        file_path = QFileDialog.getOpenFileName(self, "选取文件", "C:/", "Text Files (*.txt)")
         if file_path[0] != '':
             self.LineEdit_path.setText(file_path[0])
             self.settings.setValue("CONFIG/ip_list", file_path[0])

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'send_cmd.ui'
+# Form implementation generated from reading ui file 'C:\Users\Administrator\Desktop\ui\send_cmd.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -23,14 +23,17 @@ class Ui_Form_send_cmd(object):
         self.BodyLabel_port.setObjectName("BodyLabel_port")
         self.LineEdit_port = LineEdit(Form_send_cmd)
         self.LineEdit_port.setGeometry(QtCore.QRect(290, 60, 151, 33))
+        self.LineEdit_port.setInputMethodHints(QtCore.Qt.ImhPreferNumbers)
         self.LineEdit_port.setInputMask("")
         self.LineEdit_port.setText("")
+        self.LineEdit_port.setMaxLength(32367)
         self.LineEdit_port.setObjectName("LineEdit_port")
         self.bodyLabel_cmd = BodyLabel(Form_send_cmd)
         self.bodyLabel_cmd.setGeometry(QtCore.QRect(320, 120, 101, 20))
         self.bodyLabel_cmd.setObjectName("bodyLabel_cmd")
         self.LineEdit_cmd = LineEdit(Form_send_cmd)
         self.LineEdit_cmd.setGeometry(QtCore.QRect(270, 150, 191, 33))
+        self.LineEdit_cmd.setMaxLength(300)
         self.LineEdit_cmd.setObjectName("LineEdit_cmd")
         self.Button_Send = PrimaryPushButton(Form_send_cmd)
         self.Button_Send.setGeometry(QtCore.QRect(290, 200, 153, 32))
@@ -79,3 +82,13 @@ class Ui_Form_send_cmd(object):
         self.PillPushButton_selectAll.setText(_translate("Form_send_cmd", "全选"))
         self.PrimaryPushButton_load_ip.setText(_translate("Form_send_cmd", "加载ip"))
 from qfluentwidgets import BodyLabel, LineEdit, ListWidget, PillPushButton, PrimaryPushButton, ProgressBar, ProgressRing
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Form_send_cmd = QtWidgets.QWidget()
+    ui = Ui_Form_send_cmd()
+    ui.setupUi(Form_send_cmd)
+    Form_send_cmd.show()
+    sys.exit(app.exec_())

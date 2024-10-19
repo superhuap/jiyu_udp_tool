@@ -3,6 +3,7 @@ from PyQt5.QtCore import QSettings, QTimer
 from PyQt5.QtWidgets import QWidget, QListWidgetItem
 from qfluentwidgets import CheckBox
 
+from utils.param_check import check_ip
 from view.ui.send_message_ui import Ui_Form_send_message
 from utils.tool_api import send
 from utils.utils import utils
@@ -44,6 +45,14 @@ class send_message(QWidget, Ui_Form_send_message, utils):
             self.infoBar("warning", "端口为空，已填写4705")
             return
 
+        try:
+            if int(self.LineEdit_port.text()) > 65535:
+                self.infoBar("error", "端口错误")
+                return
+        except ValueError:
+            self.infoBar("error", "端口错误")
+            return
+
         if self.LineEdit_message.text() == '':
             self.infoBar("error", "发送消息为空。")
         else:
@@ -63,9 +72,6 @@ class send_message(QWidget, Ui_Form_send_message, utils):
                 self.ProgressBar.setMaximum(int(self.settings.value("CONFIG/time")))
                 self.ProgressBar_sendProcess.setMaximum(self.sendNum.value())
                 for i, choose in enumerate(chooses):
-                    if choose == "":
-                        self.infoBar("error", "ip不合法。")
-                        continue
                     for n in range(self.sendNum.value()):
                         send("msg", self.LineEdit_message.text(), choose, int(self.LineEdit_port.text()))
                         self.ProgressBar_sendProcess.setValue(n + 1)
@@ -93,11 +99,18 @@ class send_message(QWidget, Ui_Form_send_message, utils):
         else:
             try:
                 with open(self.settings.value("CONFIG/ip_list"), "r", encoding="utf-8") as file:
+                    num = 0
                     for data in file.read().split("\n"):
                         box = CheckBox(data)
                         item = QListWidgetItem()
-                        self.ListWidget.addItem(item)
-                        self.ListWidget.setItemWidget(item, box)
+                        if num == 5:
+                            break
+                        if check_ip(data):
+                            self.ListWidget.addItem(item)
+                            self.ListWidget.setItemWidget(item, box)
+                        else:
+                            self.infoBar("error", f"{data}不合法")
+                            num += 1
 
             except TypeError as error:
                 self.infoBar("warning", "未找到ip列表，请去设置。")
